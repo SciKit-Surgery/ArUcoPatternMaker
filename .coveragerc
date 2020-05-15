@@ -1,0 +1,6 @@
+[run]
+omit = 
+        ./arucopatternmaker/_version.py
+        ./arucopatternmaker/__init__.py
+        ./arucopatternmaker/__main__.py
+        ./arucopatternmaker/ui/arucopatternmaker_command_line.py
