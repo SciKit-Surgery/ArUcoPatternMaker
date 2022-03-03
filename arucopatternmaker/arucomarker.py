@@ -2,7 +2,7 @@
 
 import cairo,argparse,random
 
-from arucopatternmaker.algorithms.algorithms import drawMarker
+from algorithms.algorithms import drawMarker
 
 #TEST: https://jcmellado.github.io/js-aruco/getusermedia/getusermedia.html
 #http://terpconnect.umd.edu/~jwelsh12/enes100/markergen.html

@@ -47,11 +47,11 @@ def drawMarker(ctx,id10,sw,sh,x,y):
     """
     id = int2base(id10,4).zfill(5) # 0 padded 5 digits
     rows = [int(q) for q in id] # as integers
-    marker_string = str(id10,"\t",x,"\t",y,"\t0\t",
+    marker_string = str([id10,"\t",x,"\t",y,"\t0\t",
              x - sw / 2,"\t",y-sh/2, "\t0\t",
              x + sw / 2,"\t",y-sh/2, "\t0\t",
              x + sw / 2,"\t",y+sh/2, "\t0\t",
-             x - sw / 2,"\t",y+sh/2, "\t0\t")
+             x - sw / 2,"\t",y+sh/2, "\t0\t"])
     sw = sw/7.0
     sh = sh/7.0
     #val = padDigits(Number(id).toString(4),5);
@@ -61,6 +61,9 @@ def drawMarker(ctx,id10,sw,sh,x,y):
     #sw=(canvas.width - (pad*2))/7;
     #sh=(canvas.height - (pad*2))/7;
     #background white
+    markers_opts = [[False,True,True,True,True],[False,True,False,False,False]
+                   ,[True,False,True,True,False],[True,False,False,False,True]];
+
     for h in range(0,7):
         for w in range(0,7):
             #print (h, w)
