@@ -63,6 +63,9 @@ if __name__ == '__main__':
     print ( page[0] , page [1] )
     surface = cairo.PDFSurface (args.output, width_pts, height_pts)
     ctx = cairo.Context (surface)
+    #ctx.set_antialias(True)
+    #ctx.set_line_width(50)
+    #ctx.set_line_join(True)
     ctx.scale(mm2pts,mm2pts)
     done = False
 
@@ -87,15 +90,17 @@ if __name__ == '__main__':
         y = args.pagemargin
         x = args.pagemargin 
         #lets hack this bit to do a bunch around the edges
-        x = 5
-        for y in range (6, 126 , 32):
+        x = 3
+        for y in range (6, 286 , 26):
             id = markers[bid % len(markers)]
             print(drawMarker(ctx,id,args.markersize,args.markersize,x + args.bordersize,y + args.bordersize))
             bid = bid + 1
             id = markers[bid % len(markers)]
-            print(drawMarker(ctx,id,args.markersize,args.markersize,210 - x + args.bordersize - args.markersize,y + args.bordersize))
             bid = bid + 1
 
+        ctx.show_page()
+        surface.finish()
+        exit()
         for y in range (292, 190 , -32):
             id = markers[bid % len(markers)]
             print(drawMarker(ctx,id,args.markersize,args.markersize,
@@ -167,4 +172,3 @@ if __name__ == '__main__':
 
 
 
-        ctx.show_page()

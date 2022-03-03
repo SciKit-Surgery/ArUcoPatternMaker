@@ -32,65 +32,50 @@ def int2base(x, base):
   return ''.join(digits)
 
 
-def drawMarker(ctx,id10,sw,sh,x,y):
+def drawMarker(ctx,id10,tag_width,tag_height,x,y,marker_colour = [0.0,0.0,0.0]):
     """
     draws an ArUco marker on the canvas
 
     :param ctx: the canvas context to draw on
     :param id10: the marker id to draw in base 10
-    :param sw: The marker width
-    :param sh: The marker height
+    :param tag_width: The marker width
+    :param tag_height: The marker height
     :param x: The marker centre (horizontal)
     :param y: The marker centre (vertical)
+    :param marker_colour: The marker colour to use, default black
 
     :returns: a string defining the marker for a reference file
     """
     id = int2base(id10,4).zfill(5) # 0 padded 5 digits
     rows = [int(q) for q in id] # as integers
-    marker_string = str([id10,"\t",x,"\t",y,"\t0\t",
-             x - sw / 2,"\t",y-sh/2, "\t0\t",
-             x + sw / 2,"\t",y-sh/2, "\t0\t",
-             x + sw / 2,"\t",y+sh/2, "\t0\t",
-             x - sw / 2,"\t",y+sh/2, "\t0\t"])
-    sw = sw/7.0
-    sh = sh/7.0
-    #val = padDigits(Number(id).toString(4),5);
-    #rows = /(\d)(\d)(\d)(\d)(\d)/.exec(val).slice(1,6);
-    #ctx = canvas.getContext('2d');
-    #pad = canvas.pad;// || 15;
-    #sw=(canvas.width - (pad*2))/7;
-    #sh=(canvas.height - (pad*2))/7;
-    #background white
+    
+    bit_width = tag_width/7.0
+    bit_height = tag_height/7.0
+
     markers_opts = [[False,True,True,True,True],[False,True,False,False,False]
                    ,[True,False,True,True,False],[True,False,False,False,True]];
+    background_colour = [1.0, 1.0, 1.0]
+
 
     for h in range(0,7):
         for w in range(0,7):
-            #print (h, w)
             if (w==0 or h==0 or h==6 or w==6):
-                black = True
+                fill_bit = True
             elif markers_opts[rows[h - 1]][w - 1]:
-                black = True
+                fill_bit = True 
             else:
-                black = False
-            # draw rectangle at ... w*sw+pad h*sh+pad sized sw,sh
-            # filled and stroken in white or black ... 
-            if black:
-                if ( True ):
-                        #ctx.set_source_rgb(0,0.384,0.490)
-                    ctx.set_source_rgb(0.0,0.0,0.0)
-                else:
-                    ctx.set_source_rgb(0.2,0.584,0.690)
-            else:
-                #continue
-                ctx.set_source_rgb(1,1,1)
-            #this stroke command draws a rectangle of some thickness, which
-            #causes an overlap on the lines.
-            #ctx.rectangle(w*sw + x,h*sh + y,sw,sh);
-            #ctx.stroke();
-            ctx.rectangle(w*sw + x,h*sh + y,sw,sh);
-            ctx.fill();
+                fill_bit = False
+            # draw rectangle at ... w*bit_width+pad h*bit_height+pad sized bit_width,bit_height
+            # filled and stroken in white or fill_colour ... 
+            if fill_bit:
+                ctx.set_source_rgb(marker_colour[0], marker_colour[1], 
+                            marker_colour[2])
+                ctx.rectangle(w*bit_width + x,h*bit_height + y, bit_width, bit_height);
+                ctx.fill();
 
-    return marker_string
-
+    return (f"{id10}\t{x}\t{y}\t{0}"+
+            f"\t{x-tag_width/2}\t{y-tag_height/2}\t{0}" +
+            f"\t{x+tag_width/2}\t{y-tag_height/2}\t{0}" +
+            f"\t{x+tag_width/2}\t{y+tag_height/2}\t{0}" +
+            f"\t{x-tag_width/2}\t{y+tag_height/2}\t{0}")
 
