@@ -2,7 +2,7 @@
 
 import cairo,argparse,random
 
-from algorithms.algorithms import drawMarker
+from algorithms.algorithms import draw_marker
 
 #TEST: https://jcmellado.github.io/js-aruco/getusermedia/getusermedia.html
 #http://terpconnect.umd.edu/~jwelsh12/enes100/markergen.html
@@ -91,7 +91,7 @@ if __name__ == '__main__':
         x = 3
         for y in range (6, 286 , 26):
             id = markers[bid % len(markers)]
-            print(drawMarker(ctx,id,args.markersize,args.markersize,x + args.bordersize,y + args.bordersize))
+            print(draw_marker(ctx,id,args.markersize,args.markersize,x + args.bordersize,y + args.bordersize))
             bid = bid + 1
             id = markers[bid % len(markers)]
             bid = bid + 1
@@ -101,68 +101,68 @@ if __name__ == '__main__':
         exit()
         for y in range (292, 190 , -32):
             id = markers[bid % len(markers)]
-            print(drawMarker(ctx,id,args.markersize,args.markersize,
+            print(draw_marker(ctx,id,args.markersize,args.markersize,
                     x + args.bordersize,y - args.bordersize - args.markersize))
             bid = bid + 1
             id = markers[bid % len(markers)]
-            print(drawMarker(ctx,id,args.markersize,args.markersize,
+            print(draw_marker(ctx,id,args.markersize,args.markersize,
                     210 - x + args.bordersize - args.markersize,y - args.bordersize - args.markersize))
             bid = bid + 1
         
         x = 5 + args.markersize + args.bordersize 
         for y in range (6, 20 , 32):
             id = markers[bid % len(markers)]
-            print(drawMarker(ctx,id,args.markersize,args.markersize,x + args.bordersize,y + args.bordersize))
+            print(draw_marker(ctx,id,args.markersize,args.markersize,x + args.bordersize,y + args.bordersize))
             bid = bid + 1
             id = markers[bid % len(markers)]
-            print(drawMarker(ctx,id,args.markersize,args.markersize,210 - x + args.bordersize - args.markersize,y + args.bordersize))
+            print(draw_marker(ctx,id,args.markersize,args.markersize,210 - x + args.bordersize - args.markersize,y + args.bordersize))
             bid = bid + 1
 
         for y in range (292, 270 , -32):
             id = markers[bid % len(markers)]
-            print(drawMarker(ctx,id,args.markersize,args.markersize,
+            print(draw_marker(ctx,id,args.markersize,args.markersize,
                     x + args.bordersize,y - args.bordersize - args.markersize))
             bid = bid + 1
             id = markers[bid % len(markers)]
-            print(drawMarker(ctx,id,args.markersize,args.markersize,
+            print(draw_marker(ctx,id,args.markersize,args.markersize,
                     210 - x + args.bordersize - args.markersize,y - args.bordersize - args.markersize))
             bid = bid + 1
         
         x = 5 + 2 * (args.markersize + args.bordersize )
         for y in range (6, 20 , 32):
             id = markers[bid % len(markers)]
-            print(drawMarker(ctx,id,args.markersize,args.markersize,x + args.bordersize,y + args.bordersize))
+            print(draw_marker(ctx,id,args.markersize,args.markersize,x + args.bordersize,y + args.bordersize))
             bid = bid + 1
             id = markers[bid % len(markers)]
-            print(drawMarker(ctx,id,args.markersize,args.markersize,210 - x + args.bordersize - args.markersize,y + args.bordersize))
+            print(draw_marker(ctx,id,args.markersize,args.markersize,210 - x + args.bordersize - args.markersize,y + args.bordersize))
             bid = bid + 1
 
         for y in range (292, 270 , -32):
             id = markers[bid % len(markers)]
-            print(drawMarker(ctx,id,args.markersize,args.markersize,
+            print(draw_marker(ctx,id,args.markersize,args.markersize,
                     x + args.bordersize,y - args.bordersize - args.markersize))
             bid = bid + 1
             id = markers[bid % len(markers)]
-            print(drawMarker(ctx,id,args.markersize,args.markersize,
+            print(draw_marker(ctx,id,args.markersize,args.markersize,
                     210 - x + args.bordersize - args.markersize,y - args.bordersize - args.markersize))
             bid = bid + 1
     
         """ x = 5 + 3 * (args.markersize + args.bordersize )
         for y in range (6, 20 , 22):
             id = markers[bid % len(markers)]
-            print(drawMarker(ctx,id,args.markersize,args.markersize,x + args.bordersize,y + args.bordersize))
+            print(draw_marker(ctx,id,args.markersize,args.markersize,x + args.bordersize,y + args.bordersize))
             bid = bid + 1
             id = markers[bid % len(markers)]
-            print(drawMarker(ctx,id,args.markersize,args.markersize,210 - x + args.bordersize - args.markersize,y + args.bordersize))
+            print(draw_marker(ctx,id,args.markersize,args.markersize,210 - x + args.bordersize - args.markersize,y + args.bordersize))
             bid = bid + 1
         """
         for y in range (292, 270 , -22):
             id = markers[bid % len(markers)]
-            drawMarker(ctx,id,args.markersize,args.markersize,
+            draw_marker(ctx,id,args.markersize,args.markersize,
                     x + args.bordersize,y - args.bordersize - args.markersize)
             bid = bid + 1
             id = markers[bid % len(markers)]
-            drawMarker(ctx,id,args.markersize,args.markersize,
+            draw_marker(ctx,id,args.markersize,args.markersize,
                     210 - x + args.bordersize - args.markersize,y - args.bordersize - args.markersize)
             bid = bid + 1
 
