@@ -7,8 +7,6 @@ from algorithms.algorithms import drawMarker
 #TEST: https://jcmellado.github.io/js-aruco/getusermedia/getusermedia.html
 #http://terpconnect.umd.edu/~jwelsh12/enes100/markergen.html
 #http://terpconnect.umd.edu/~jwelsh12/enes100/markers.js
-markers_opts = [[False,True,True,True,True],[False,True,False,False,False]
-                   ,[True,False,True,True,False],[True,False,False,False,True]];
 
 if __name__ == '__main__':
     import argparse
