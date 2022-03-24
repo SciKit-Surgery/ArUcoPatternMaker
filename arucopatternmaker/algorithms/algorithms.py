@@ -33,7 +33,7 @@ def int2base(int_x, base):
 
 
 def draw_marker(ctx, id10, tag_width, tag_height, pos_x, pos_y,
-        marker_colour = None):
+        marker_colour = None, page_offset = [-100, -135]):
     """
     draws an ArUco marker on the canvas
 
@@ -78,6 +78,8 @@ def draw_marker(ctx, id10, tag_width, tag_height, pos_x, pos_y,
                         bit_width, bit_height)
                 ctx.fill()
 
+    pos_x = pos_x + page_offset[0]
+    pos_y = pos_y + page_offset[1]
     return (f"{id10}\t{pos_x}\t{pos_y}\t{0}"+
             f"\t{pos_x-tag_width/2}\t{pos_y-tag_height/2}\t{0}" +
             f"\t{pos_x+tag_width/2}\t{pos_y-tag_height/2}\t{0}" +
