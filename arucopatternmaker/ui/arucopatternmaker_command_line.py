@@ -14,7 +14,6 @@ def main(args=None):
     parser = argparse.ArgumentParser(description='ArUcoPatternMaker')
 
     parser.add_argument('--page', default="A4", help='page size: A4 or A3')
-    parser.add_argument('--pages',default=1,type=int,help="number of pages")
     parser.add_argument('--landscape', dest='landscape', action='store_const',
             const=True,default=False,help="set landscape")
     parser.add_argument('--portrait', dest='landscape', action='store_const',
@@ -67,7 +66,7 @@ def main(args=None):
         args.last = args.first + args.count - 1
     else:
         args.count = args.last - args.first + 1
-    run_demo(args.page, args.pages, args.landscape, args.fill, args.pagemargin,
+    run_demo(args.page, args.landscape, args.fill, args.pagemargin,
             args.markersize, args.bordersize, args.spacing, args.cols,
             args.rows, args.output, args.first, args.last, args.count,
             args.random, args.pageborder, args.verbose)
