@@ -33,7 +33,7 @@ def int2base(int_x, base):
 
 
 def draw_marker(ctx, id10, tag_width, tag_height, pos_x, pos_y,
-        marker_colour = None, page_offset = [-100, -135]):
+        marker_colour = None, page_offset = None):
     """
     draws an ArUco marker on the canvas
 
@@ -49,6 +49,9 @@ def draw_marker(ctx, id10, tag_width, tag_height, pos_x, pos_y,
     """
     if marker_colour is None:
         marker_colour = [0.0,0.0,0.0]
+
+    if page_offset is None:
+        page_offset = [-100, -135]
 
     tag_id = int2base(id10,4).zfill(5) # 0 padded 5 digits
     rows = [int(q) for q in tag_id] # as integers

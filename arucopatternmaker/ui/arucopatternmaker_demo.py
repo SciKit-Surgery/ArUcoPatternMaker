@@ -5,7 +5,7 @@ import cairo,argparse,random
 
 from arucopatternmaker.algorithms.algorithms import draw_marker
 
-def run_demo(page_size, page_count, landscape, fill_page, page_margin, 
+def run_demo(page_size, page_count, landscape, fill_page, page_margin,
         marker_size, border_size, spacing, columns, rows, output, first,
         last, count, randomise, page_border, verbose):
     """ Run the application """
@@ -20,7 +20,7 @@ def run_demo(page_size, page_count, landscape, fill_page, page_margin,
     border_colour = (0.0,0.0,0.0)
 
     if fill_page:
-        columns = (page[0] - page_margin*2)/(marker_size + border_size*2 
+        columns = (page[0] - page_margin*2)/(marker_size + border_size*2
                 + spacing)
         rows = (page[1] - page_margin*2)/(marker_size + border_size *2
                 + spacing)

@@ -58,7 +58,7 @@ def main(args=None):
         version='ArUcoPatternMaker version ' + friendly_version_string)
 
     args = parser.parse_args(args)
-    
+
     pages = dict(A4=(210,297),A3=(297,420))
     page = pages[args.page]
     if args.landscape:
@@ -67,7 +67,7 @@ def main(args=None):
         args.last = args.first + args.count - 1
     else:
         args.count = args.last - args.first + 1
-    run_demo(args.page, args.pages, args.landscape, args.fill, args.pagemargin, 
-            args.markersize, args.bordersize, args.spacing, args.cols, 
+    run_demo(args.page, args.pages, args.landscape, args.fill, args.pagemargin,
+            args.markersize, args.bordersize, args.spacing, args.cols,
             args.rows, args.output, args.first, args.last, args.count,
             args.random, args.pageborder, args.verbose)
