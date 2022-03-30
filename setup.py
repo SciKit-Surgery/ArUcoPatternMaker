@@ -17,7 +17,7 @@ setup(
     description='Creates patterns of ArUco markers',
     long_description=long_description,
     long_description_content_type='text/x-rst',
-    url='https://github.com/thompson318/ArUcoPatternMaker',
+    url='https://github.com/SciKit-Surgery/ArUcoPatternMaker',
     author='Stephen Thompson',
     author_email='YOUR-EMAIL@ucl.ac.uk',
     license='BSD-3 license',
