@@ -58,14 +58,6 @@ def main(args=None):
 
     args = parser.parse_args(args)
 
-    pages = dict(A4=(210,297),A3=(297,420))
-    page = pages[args.page]
-    if args.landscape:
-        page = (page[1],page[0])
-    if args.count != 0:
-        args.last = args.first + args.count - 1
-    else:
-        args.count = args.last - args.first + 1
     run_demo(args.page, args.landscape, args.fill, args.pagemargin,
             args.markersize, args.bordersize, args.spacing, args.cols,
             args.rows, args.output, args.first, args.last, args.count,

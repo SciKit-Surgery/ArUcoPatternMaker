@@ -15,6 +15,11 @@ def run_demo(page_size, landscape, fill_page, page_margin,
     if landscape:
         page = (page[1],page[0])
 
+    if count != 0:
+        last = first + count - 1
+    else:
+        count = last - first + 1
+    
     mm2pts = 2.83464567
     line_width = 0.5 # mm
     default_linewidth = 0.5
