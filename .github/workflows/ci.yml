@@ -60,6 +60,8 @@ jobs:
           pylint --rcfile=tests/pylintrc arucopatternmaker
 
       - name: Run coveralls
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           coveralls
 
