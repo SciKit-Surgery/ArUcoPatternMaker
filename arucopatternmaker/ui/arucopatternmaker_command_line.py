@@ -44,10 +44,6 @@ def main(args=None):
     parser.add_argument('--random', action='store_true',
             help="randomize markers for board (and produces the randomization)")
     parser.add_argument('--output',default="output.pdf",help="outputfilename")
-    parser.add_argument("-v", "--verbose",
-                        action="store_true",
-                        help="Enable verbose output",
-                        )
 
     version_string = __version__
     friendly_version_string = version_string if version_string else 'unknown'
@@ -61,4 +57,4 @@ def main(args=None):
     run_demo(args.page, args.landscape, args.fill, args.pagemargin,
             args.markersize, args.bordersize, args.spacing, args.cols,
             args.rows, args.output, args.first, args.last, args.count,
-            args.random, args.pageborder, args.verbose)
+            args.random, args.pageborder)

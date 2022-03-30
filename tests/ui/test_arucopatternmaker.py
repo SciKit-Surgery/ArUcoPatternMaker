@@ -11,4 +11,4 @@ def test_arucopatternmaker():
     run_demo('A4', False, False, 15,
             20, 1, 2, 3,
             5, 'test_output.pdf', 360, 410, 0,
-            False, False, False)
+            False, False)
