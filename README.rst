@@ -9,16 +9,16 @@ ArUcoPatternMaker
 
 |
 
-.. image:: https://github.com/SciKit-Surgery/ArUcoPatternMaker/badges/master/build.svg
-   :target: https://github.com/SciKit-Surgery/ArUcoPatternMaker/pipelines
+.. image:: https://github.com/SciKit-Surgery/ArUcoPatternMaker/workflows/.github/workflows/ci.yml/badge.svg
+   :target: https://github.com/SciKit-Surgery/ArUcoPatternMaker/actions
    :alt: GitLab-CI test status
 
-.. image:: https://github.com/SciKit-Surgery/ArUcoPatternMaker/badges/master/coverage.svg
-    :target: https://github.com/SciKit-Surgery/ArUcoPatternMaker/commits/master
+.. image:: https://coveralls.io/repos/github/SciKit-Surgery/ArUcoPatternMaker/badge.svg?branch=master
+    :target: https://coveralls.io/github/SciKit-Surgery/ArUcoPatternMaker?branch=master
     :alt: Test coverage
 
-.. image:: https://readthedocs.org/projects/ArUcoPatternMaker/badge/?version=latest
-    :target: http://ArUcoPatternMaker.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/arucopatternmaker/badge/?version=latest
+    :target: https://arucopatternmaker.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
 .. image:: https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg
