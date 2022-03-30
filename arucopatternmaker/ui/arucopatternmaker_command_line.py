@@ -38,8 +38,6 @@ def main(args=None):
             help="count (alternative to last)")
     parser.add_argument('--border', action='store_true',
             help="draws black border around")
-    parser.add_argument('--pageborder', action='store_true',
-            help="draws black border around")
     parser.add_argument('--axis', action='store_true',help="highlights axis")
     parser.add_argument('--random', action='store_true',
             help="randomize markers for board (and produces the randomization)")
@@ -57,4 +55,4 @@ def main(args=None):
     run_demo(args.page, args.landscape, args.fill, args.pagemargin,
             args.markersize, args.bordersize, args.spacing, args.cols,
             args.rows, args.output, args.first, args.last, args.count,
-            args.random, args.pageborder)
+            args.random)

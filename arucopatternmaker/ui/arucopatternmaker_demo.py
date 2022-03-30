@@ -8,7 +8,7 @@ from arucopatternmaker.algorithms.algorithms import draw_marker
 
 def run_demo(page_size, landscape, fill_page, page_margin,
         marker_size, border_size, spacing, columns, rows, output, first,
-        last, count, randomise, page_border):
+        last, count, randomise):
     """ Run the application """
     pages = dict(A4=(210,297),A3=(297,420))
     page = pages[page_size]
@@ -21,8 +21,6 @@ def run_demo(page_size, landscape, fill_page, page_margin,
         count = last - first + 1
 
     mm2pts = 2.83464567
-    line_width = 0.5 # mm
-    border_colour = (0.0,0.0,0.0)
 
     if fill_page:
         columns = (page[0] - page_margin*2)/(marker_size + border_size*2
@@ -48,12 +46,6 @@ def run_demo(page_size, landscape, fill_page, page_margin,
         random.shuffle(markers)
 
     with open(output+".txt","w", encoding='utf8') as reference_out:
-        if page_border:
-            ctx.set_source_rgb(*border_colour)
-            ctx.set_line_width(line_width)
-            ctx.rectangle(page_margin, page_margin,page[0]
-                    -page_margin*2, page[1] - page_margin*2)
-            ctx.stroke()
         y_coord = page_margin
         x_coord = page_margin
         #lets hack this bit to do a bunch around the edges
