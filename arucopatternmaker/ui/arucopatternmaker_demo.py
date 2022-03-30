@@ -6,9 +6,9 @@ import cairo
 
 from arucopatternmaker.algorithms.algorithms import draw_marker
 
-def run_demo(page_size, landscape, fill_page, page_margin,
-        marker_size, border_size, spacing, columns, rows, output, first,
-        last, count, randomise):
+def run_demo(page_size, landscape, #pylint: disable=too-many-arguments
+        fill_page, page_margin, marker_size, border_size, spacing,
+        columns, rows, output, first, last, count, randomise):
     """ Run the application """
     pages = dict(A4=(210,297),A3=(297,420))
     page = pages[page_size]
